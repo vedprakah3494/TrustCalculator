@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrustCalculatorModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TrustCalculatorModelStoreContainer">
+    <EntitySet Name="CategoryDetail" EntityType="TrustCalculatorModel.Store.CategoryDetail" store:Type="Tables" />
+    <EntitySet Name="InvestmentDetail" EntityType="TrustCalculatorModel.Store.InvestmentDetail" store:Type="Tables" />
+    <EntitySet Name="ms_CategoryDetail" EntityType="TrustCalculatorModel.Store.ms_CategoryDetail" store:Type="Tables" />
+    <EntitySet Name="ms_InvestmentOption" EntityType="TrustCalculatorModel.Store.ms_InvestmentOption" store:Type="Tables" />
+    <EntitySet Name="TrustDetail" EntityType="TrustCalculatorModel.Store.TrustDetail" store:Type="Tables" />
+    <EntitySet Name="UserDetail" EntityType="TrustCalculatorModel.Store.UserDetail" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="CategoryDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TotalCatValue" Type="money" />
+    <Property Name="Maximum" Type="money" />
+    <Property Name="Minimum" Type="money" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="TrustID" Type="int" />
+  </EntityType>
+  <EntityType Name="InvestmentDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="InvestmentID" Type="int" />
+    <Property Name="InvestmentValue" Type="money" />
+    <Property Name="CreatedBy" Type="nchar" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nchar" MaxLength="100" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TrustID" Type="int" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="500" />
+    <Property Name="ExcessShortfall" Type="nvarchar" MaxLength="19" />
+  </EntityType>
+  <EntityType Name="ms_CategoryDetail">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Maximum" Type="float" />
+    <Property Name="Minimum" Type="float" />
+    <Property Name="CreatedBy" Type="nchar" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ms_InvestmentOption">
+    <Key>
+      <PropertyRef Name="InvestmentID" />
+    </Key>
+    <Property Name="InvestmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvestmentName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Maximum" Type="float" />
+    <Property Name="Minimum" Type="float" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="CreatedBy" Type="nchar" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TrustDetail">
+    <Key>
+      <PropertyRef Name="TrustID" />
+    </Key>
+    <Property Name="TrustName" Type="nvarchar" MaxLength="300" />
+    <Property Name="TrustID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Address" Type="nvarchar" MaxLength="300" />
+    <Property Name="ContPerson" Type="nvarchar" MaxLength="200" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="PanNo" Type="nchar" MaxLength="10" />
+    <Property Name="Advances" Type="money" />
+    <Property Name="Total_Corps" Type="money" />
+  </EntityType>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Password" Type="nvarchar" MaxLength="10" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="10" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="10" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+    <Property Name="VerificationKey" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+</Schema>

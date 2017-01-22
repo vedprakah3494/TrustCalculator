@@ -1,0 +1,45 @@
+﻿<Window x:Class="TrustCalculator.TrustRegistation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Trust Registation" Name="TrustDetail" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Width="{Binding ElementName=TrustDetail,Path=ActualWidth}" Height="{Binding ElementName=TrustDetail,Path=ActualHeight}" Name="grid_main" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.Background>
+            <ImageBrush ImageSource="images/bg.jpg" TileMode="Tile" Stretch="Fill"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="179"/>
+            <ColumnDefinition Width="21"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <Label Content="Establishment Name"  Grid.Column="1" Grid.Row=  "3"/>
+        <Label Content="Address"  Grid.Column="1" Grid.Row="4"/>
+        <Label Content="Tax PAN Number"  Grid.Column="1" Grid.Row="5"/>
+        <Label Content="Contact Person"  Grid.Column="1" Grid.Row="6"/>
+        <Label Content="Contact No."  Grid.Column="1" Grid.Row="7"/>
+        <TextBox  CharacterCasing="Upper" MaxLength="300" Name="txt_TrustName" Height="30" Grid.Row="3" Grid.Column="3" TextWrapping="Wrap" Width="150" />
+        <TextBox  CharacterCasing="Upper" MaxLength="300" Name="txt_Address" Height="30" Grid.Row="4" Grid.Column="3" TextWrapping="Wrap" Width="150"/>
+        <TextBox  CharacterCasing="Upper" MaxLength="20" Name="txt_PanNo" Height="30" Grid.Row="5" Grid.Column="3" TextWrapping="Wrap" Width="150"/>
+        <TextBox  CharacterCasing="Upper" MaxLength="300" Name="txt_Person" Height="30" Grid.Row="6" Grid.Column="3" TextWrapping="Wrap" Width="150"/>
+        <TextBox Name="txt_PhoneNO" MaxLength="15" Height="30" Grid.Row="7" Grid.Column="3" TextWrapping="Wrap" Width="150" />
+        <Button Name="Submit" Content="Submit" Grid.Column="3" Grid.Row="8" Height="30" Width="75" Click="Submit_Click"/>
+
+
+    </Grid>
+</Window>

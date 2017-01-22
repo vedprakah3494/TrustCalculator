@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TrustCalculatorModelStoreContainer" CdmEntityContainer="TrustCalculatorEntities">
+    <EntitySetMapping Name="CategoryDetails">
+      <EntityTypeMapping TypeName="TrustCalculatorModel.CategoryDetail">
+        <MappingFragment StoreEntitySet="CategoryDetail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TotalCatValue" ColumnName="TotalCatValue" />
+          <ScalarProperty Name="Maximum" ColumnName="Maximum" />
+          <ScalarProperty Name="Minimum" ColumnName="Minimum" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="TrustID" ColumnName="TrustID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvestmentDetails">
+      <EntityTypeMapping TypeName="TrustCalculatorModel.InvestmentDetail">
+        <MappingFragment StoreEntitySet="InvestmentDetail">
+          <ScalarProperty Name="InvestmentID" ColumnName="InvestmentID" />
+          <ScalarProperty Name="InvestmentValue" ColumnName="InvestmentValue" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TrustID" ColumnName="TrustID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ExcessShortfall" ColumnName="ExcessShortfall" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ms_CategoryDetail">
+      <EntityTypeMapping TypeName="TrustCalculatorModel.ms_CategoryDetail">
+        <MappingFragment StoreEntitySet="ms_CategoryDetail">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Maximum" ColumnName="Maximum" />
+          <ScalarProperty Name="Minimum" ColumnName="Minimum" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ms_InvestmentOption">
+      <EntityTypeMapping TypeName="TrustCalculatorModel.ms_InvestmentOption">
+        <MappingFragment StoreEntitySet="ms_InvestmentOption">
+          <ScalarProperty Name="InvestmentID" ColumnName="InvestmentID" />
+          <ScalarProperty Name="InvestmentName" ColumnName="InvestmentName" />
+          <ScalarProperty Name="Maximum" ColumnName="Maximum" />
+          <ScalarProperty Name="Minimum" ColumnName="Minimum" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrustDetails">
+      <EntityTypeMapping TypeName="TrustCalculatorModel.TrustDetail">
+        <MappingFragment StoreEntitySet="TrustDetail">
+          <ScalarProperty Name="TrustName" ColumnName="TrustName" />
+          <ScalarProperty Name="TrustID" ColumnName="TrustID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContPerson" ColumnName="ContPerson" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="PanNo" ColumnName="PanNo" />
+          <ScalarProperty Name="Advances" ColumnName="Advances" />
+          <ScalarProperty Name="Total_Corps" ColumnName="Total_Corps" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="TrustCalculatorModel.UserDetail">
+        <MappingFragment StoreEntitySet="UserDetail">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="VerificationKey" ColumnName="VerificationKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

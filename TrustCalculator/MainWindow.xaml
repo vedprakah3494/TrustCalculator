@@ -1,0 +1,20 @@
+﻿<Window x:Class="TrustCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Trust Calculator" Height="400" Width="625" WindowStartupLocation="CenterScreen" Topmost="True" ResizeMode="NoResize" Icon="images/logo.png">
+    <Grid OpacityMask="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" HorizontalAlignment="Center" Margin="0,0,-8,0" Width="625">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="499*"/>
+            <ColumnDefinition Width="126*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="images/home.jpg" TileMode="Tile" Stretch="Fill"/>
+        </Grid.Background>
+        <Label Content="User Name" HorizontalAlignment="Left" Margin="359,164,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FFF6F6F6"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="364,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.056,0.504" FontSize="14" Foreground="#FFF6F6F6"/>
+        <TextBox Name="txt_username" HorizontalAlignment="Left" Height="30" Margin="458,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <PasswordBox Name="txt_Password" HorizontalAlignment="Left" Margin="457,209,0,0" VerticalAlignment="Top" Width="120" Height="30" Grid.ColumnSpan="2"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="476,254,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="Button_Click" RenderTransformOrigin="0.512,-0.319" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>

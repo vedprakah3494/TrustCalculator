@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="TrustCalculator.exe" version="1.0.0.2" publicKeyToken="98115cc1d247a816" language="en" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="images\icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="TrustCalculator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="TrustCalculator.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.ReportViewer.Common" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.ReportViewer.DataVisualization" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.ReportViewer.ProcessingObjectModel" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.ReportViewer.WinForms" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.SqlServer.Types" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="PresentationUI" version="4.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="1116760">
+      <assemblyIdentity name="EntityFramework" version="5.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>PoNKnbJ6KecCojr5W66/YqltD4tkc9jUL2AUPZPv3LU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SqlServerCe.dll" size="470240">
+      <assemblyIdentity name="System.Data.SqlServerCe" version="4.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>fzAjKmnGW7OJ3tIr3/LRns9mJFYblHB1es3oCxTi/k0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TrustCalculator.exe" size="1339792">
+      <assemblyIdentity name="TrustCalculator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>6qsB/gmVeeiz5IgMcbG1Ut02d+9RfyylYowMh1e4MAs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="images\icon.ico" size="228566">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>sIMZU43qyllSn6wBiazmUKbW/nLrK8iTtiJh8IPkffY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Model.Context.tt" size="26160">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>IPxAMkyb44Ta0bnWg7N4ubEl42107vkteK6HMs0CP4I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Model.tt" size="28746">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4yj1KMkSOj4j3KwGs7B4M1VypF6ZnC0f7YIgdIJgiLU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="TrustCalculator.exe.config" size="1254">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>O9R/jIr6NExSv4B9Cz8ZbtLSJsaxM79IRl5CwDZXMDE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="TrustCalculator.sdf" size="217088" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>BOk1K8k8Gljq/4ivPG7zAOrRdJto6bZXjOf278VfIw8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=VED\LUCK" issuerKeyHash="3a7fe3c550fa93608b905e66b26662c1e61ec880" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>NPbwVxHgY1nQ86Hyb3tyvg0W0zCGTekKCiBkfnwQSNQ=</DigestValue></Reference></SignedInfo><SignatureValue>dS6Y3oOxPZg7GE8OW4x1saEG0MdlHJDbiIDDbYt+odQYGHxQJBeialCHUreqIwq1MxGSXPnhoW6isYIGweKVYQQs2Uj1MPn02vC1tciXlrwfonqwMUUdmNZVnImCign/QH98N0c84GWcbNAX9DH90e6QIDQpJl9+jxdHtJUHV4A=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>son2VIAYk242eVspAoq/p6RJ+rjzQuVpUJmWnFXqhtmvbpTv9v0k9YIRxBJv9phAlulbTWHSLuE2Cfyk3oCMVGKiR0hexo88vB1WNGcEobFPuoFEtBWh1IPEHerZwDxFfRL3EMEHXP/PL6ZqzCR2rt8LXSRXb3nHO5TJNnwqdJk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="d448107c7e64200a0ae94d8630d3160dbe727b6ff2a1f3d05963e01157f0f634" Description="" Url=""><as:assemblyIdentity name="TrustCalculator.exe" version="1.0.0.2" publicKeyToken="98115cc1d247a816" language="en" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=VED\LUCK</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>T22Kb/1Q1FzCm8zxFqJg5D43k7H4iA9Vm9D7zpT0K88=</DigestValue></Reference></SignedInfo><SignatureValue>bc4S0dL9LzA1ZROoQkn/T9pk0K1EQMDpS0nAZv5bl8e1D4WEvnzponl2bwwP/22gt5aW8OvjjJxbS3Y2Nyb5GDGRNNe080UJiYQdaxvFKBpEyvqSG1n1DzLxOuLN5XGQmuu+fgW2mslEYtb2V5GJ1ab9N1NsdokuP0+4sZUNajU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>son2VIAYk242eVspAoq/p6RJ+rjzQuVpUJmWnFXqhtmvbpTv9v0k9YIRxBJv9phAlulbTWHSLuE2Cfyk3oCMVGKiR0hexo88vB1WNGcEobFPuoFEtBWh1IPEHerZwDxFfRL3EMEHXP/PL6ZqzCR2rt8LXSRXb3nHO5TJNnwqdJk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBuTCCASKgAwIBAgIQOE9eEcIbmJJAeZCpNRLHuzANBgkqhkiG9w0BAQsFADAbMRkwFwYDVQQDHhAAVgBFAEQAXABMAFUAQwBLMB4XDTE1MTEyMjE4MTQwNFoXDTE2MTEyMjAwMTQwNFowGzEZMBcGA1UEAx4QAFYARQBEAFwATABVAEMASzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAson2VIAYk242eVspAoq/p6RJ+rjzQuVpUJmWnFXqhtmvbpTv9v0k9YIRxBJv9phAlulbTWHSLuE2Cfyk3oCMVGKiR0hexo88vB1WNGcEobFPuoFEtBWh1IPEHerZwDxFfRL3EMEHXP/PL6ZqzCR2rt8LXSRXb3nHO5TJNnwqdJkCAwEAATANBgkqhkiG9w0BAQsFAAOBgQCa8rVOIaulUqtgaDH6wy/R8my3vD6U83DTDdj06Ne9a5mOlaAARr2Y5QhNwhZTtUqTmb6twgVgyMgv6Gl1x79HCACbT/KSnhTNmph+Wi5mBsyM+22d0UiLRCgmWldkPtncRm/sehu8REcqUtvVjDLTqS/g0obg4wMqyGuqeu7jkA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

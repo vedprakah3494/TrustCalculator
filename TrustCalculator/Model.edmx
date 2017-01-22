@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TrustCalculatorModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TrustCalculatorModelStoreContainer">
+          <EntitySet Name="CategoryDetail" EntityType="TrustCalculatorModel.Store.CategoryDetail" store:Type="Tables" />
+          <EntitySet Name="InvestmentDetail" EntityType="TrustCalculatorModel.Store.InvestmentDetail" store:Type="Tables" />
+          <EntitySet Name="ms_CategoryDetail" EntityType="TrustCalculatorModel.Store.ms_CategoryDetail" store:Type="Tables" />
+          <EntitySet Name="ms_InvestmentOption" EntityType="TrustCalculatorModel.Store.ms_InvestmentOption" store:Type="Tables" />
+          <EntitySet Name="TrustDetail" EntityType="TrustCalculatorModel.Store.TrustDetail" store:Type="Tables" />
+          <EntitySet Name="UserDetail" EntityType="TrustCalculatorModel.Store.UserDetail" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="CategoryDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TotalCatValue" Type="money" />
+          <Property Name="Maximum" Type="money" />
+          <Property Name="Minimum" Type="money" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="TrustID" Type="int" />
+          <Property Name="Status" Type="nchar" MaxLength="100" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="InvestmentDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="InvestmentID" Type="int" />
+          <Property Name="InvestmentValue" Type="money" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="100" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="100" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TrustID" Type="int" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="300" />
+          <Property Name="ExcessShortfall" Type="nvarchar" MaxLength="19" />
+          <Property Name="Maximum" Type="money" />
+          <Property Name="Minimum" Type="money" />
+        </EntityType>
+        <EntityType Name="ms_CategoryDetail">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Maximum" Type="float" />
+          <Property Name="Minimum" Type="float" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="100" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ms_InvestmentOption">
+          <Key>
+            <PropertyRef Name="InvestmentID" />
+          </Key>
+          <Property Name="InvestmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InvestmentName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Maximum" Type="float" />
+          <Property Name="Minimum" Type="float" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="100" />
+          <Property Name="UpdatedBy" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TrustDetail">
+          <Key>
+            <PropertyRef Name="TrustID" />
+          </Key>
+          <Property Name="TrustName" Type="nvarchar" MaxLength="300" />
+          <Property Name="TrustID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="nvarchar" MaxLength="300" />
+          <Property Name="ContPerson" Type="nvarchar" MaxLength="300" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="15" />
+          <Property Name="PanNo" Type="nchar" MaxLength="30" />
+          <Property Name="Advances" Type="money" />
+          <Property Name="Total_Corps" Type="money" />
+        </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Password" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="10" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="10" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+          <Property Name="VerificationKey" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TrustCalculatorModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TrustCalculatorEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="CategoryDetails" EntityType="TrustCalculatorModel.CategoryDetail" />
+          <EntitySet Name="InvestmentDetails" EntityType="TrustCalculatorModel.InvestmentDetail" />
+          <EntitySet Name="ms_CategoryDetail" EntityType="TrustCalculatorModel.ms_CategoryDetail" />
+          <EntitySet Name="ms_InvestmentOption" EntityType="TrustCalculatorModel.ms_InvestmentOption" />
+          <EntitySet Name="TrustDetails" EntityType="TrustCalculatorModel.TrustDetail" />
+          <EntitySet Name="UserDetails" EntityType="TrustCalculatorModel.UserDetail" />
+        </EntityContainer>
+        <EntityType Name="CategoryDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TotalCatValue" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Maximum" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Minimum" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="TrustID" Type="Int32" />
+          <Property Type="String" Name="Status" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Comment" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="InvestmentDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="InvestmentID" Type="Int32" />
+          <Property Name="InvestmentValue" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TrustID" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="ExcessShortfall" Type="String" MaxLength="19" Unicode="true" FixedLength="false" />
+          <Property Type="Decimal" Name="Maximum" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="Minimum" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="ms_CategoryDetail">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Maximum" Type="Double" />
+          <Property Name="Minimum" Type="Double" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="ms_InvestmentOption">
+          <Key>
+            <PropertyRef Name="InvestmentID" />
+          </Key>
+          <Property Name="InvestmentID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="InvestmentName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Maximum" Type="Double" />
+          <Property Name="Minimum" Type="Double" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="TrustDetail">
+          <Key>
+            <PropertyRef Name="TrustID" />
+          </Key>
+          <Property Name="TrustName" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="TrustID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="ContPerson" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="PhoneNo" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="PanNo" Type="String" MaxLength="30" Unicode="true" FixedLength="true" />
+          <Property Name="Advances" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Total_Corps" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="EmailID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="VerificationKey" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TrustCalculatorModelStoreContainer" CdmEntityContainer="TrustCalculatorEntities">
+          <EntitySetMapping Name="CategoryDetails">
+            <EntityTypeMapping TypeName="TrustCalculatorModel.CategoryDetail">
+              <MappingFragment StoreEntitySet="CategoryDetail">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TotalCatValue" ColumnName="TotalCatValue" />
+                <ScalarProperty Name="Maximum" ColumnName="Maximum" />
+                <ScalarProperty Name="Minimum" ColumnName="Minimum" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="TrustID" ColumnName="TrustID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvestmentDetails">
+            <EntityTypeMapping TypeName="TrustCalculatorModel.InvestmentDetail">
+              <MappingFragment StoreEntitySet="InvestmentDetail">
+                <ScalarProperty Name="Minimum" ColumnName="Minimum" />
+                <ScalarProperty Name="Maximum" ColumnName="Maximum" />
+                <ScalarProperty Name="InvestmentID" ColumnName="InvestmentID" />
+                <ScalarProperty Name="InvestmentValue" ColumnName="InvestmentValue" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TrustID" ColumnName="TrustID" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ExcessShortfall" ColumnName="ExcessShortfall" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ms_CategoryDetail">
+            <EntityTypeMapping TypeName="TrustCalculatorModel.ms_CategoryDetail">
+              <MappingFragment StoreEntitySet="ms_CategoryDetail">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Maximum" ColumnName="Maximum" />
+                <ScalarProperty Name="Minimum" ColumnName="Minimum" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ms_InvestmentOption">
+            <EntityTypeMapping TypeName="TrustCalculatorModel.ms_InvestmentOption">
+              <MappingFragment StoreEntitySet="ms_InvestmentOption">
+                <ScalarProperty Name="InvestmentID" ColumnName="InvestmentID" />
+                <ScalarProperty Name="InvestmentName" ColumnName="InvestmentName" />
+                <ScalarProperty Name="Maximum" ColumnName="Maximum" />
+                <ScalarProperty Name="Minimum" ColumnName="Minimum" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrustDetails">
+            <EntityTypeMapping TypeName="TrustCalculatorModel.TrustDetail">
+              <MappingFragment StoreEntitySet="TrustDetail">
+                <ScalarProperty Name="TrustName" ColumnName="TrustName" />
+                <ScalarProperty Name="TrustID" ColumnName="TrustID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContPerson" ColumnName="ContPerson" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="PanNo" ColumnName="PanNo" />
+                <ScalarProperty Name="Advances" ColumnName="Advances" />
+                <ScalarProperty Name="Total_Corps" ColumnName="Total_Corps" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDetails">
+            <EntityTypeMapping TypeName="TrustCalculatorModel.UserDetail">
+              <MappingFragment StoreEntitySet="UserDetail">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="VerificationKey" ColumnName="VerificationKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="TrustCalculator.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Home" Height="600" Width="700" Name="Home_main" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="images/logo.png">
+    <Grid Width="{Binding ElementName=Home_main,Path=ActualWidth}" Height="{Binding ElementName=Home_main,Path=ActualHeight}" Name="grid_main" HorizontalAlignment="Center" VerticalAlignment="Center">      
+        <Grid.Background>
+            <ImageBrush ImageSource="images/bg.jpg" TileMode="Tile" Stretch="Fill"/>
+        </Grid.Background>
+
+        <StatusBar HorizontalAlignment="Left" Height="26" VerticalAlignment="Bottom" Width="700" Grid.ColumnSpan="2"/>
+        <Menu HorizontalAlignment="Center" Height="30" IsMainMenu="True" Margin="0,18,0,0" VerticalAlignment="Top"  Width="{Binding ElementName=grid_main,Path=ActualWidth}" Background="#FF7591DA" Foreground="#FFFEFEFE" FontFamily="Times New Roman" Grid.ColumnSpan="2" >
+            <MenuItem Header="Home" Margin="5"/>
+            <MenuItem Header="Trust Registation" Name="TrustRegistation" Click="TrustRegistation_Click"/>
+            <MenuItem Header="Report" Click="MenuItem_Click_Report" />
+            <MenuItem Header="Help" />      
+            <MenuItem Header="My Account" Click="MenuItem_Click_1" />
+            <MenuItem Header="Logout" Click="MenuItem_Click"/>
+        </Menu>
+
+    </Grid>
+</Window>

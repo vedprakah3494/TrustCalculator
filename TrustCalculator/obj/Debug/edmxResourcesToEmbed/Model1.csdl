@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrustCalculatorModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TrustCalculatorEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CategoryDetails" EntityType="TrustCalculatorModel.CategoryDetail" />
+    <EntitySet Name="InvestmentDetails" EntityType="TrustCalculatorModel.InvestmentDetail" />
+    <EntitySet Name="ms_CategoryDetail" EntityType="TrustCalculatorModel.ms_CategoryDetail" />
+    <EntitySet Name="ms_InvestmentOption" EntityType="TrustCalculatorModel.ms_InvestmentOption" />
+    <EntitySet Name="TrustDetails" EntityType="TrustCalculatorModel.TrustDetail" />
+    <EntitySet Name="UserDetails" EntityType="TrustCalculatorModel.UserDetail" />
+  </EntityContainer>
+  <EntityType Name="CategoryDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TotalCatValue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Maximum" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Minimum" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="TrustID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="InvestmentDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="InvestmentID" Type="Int32" />
+    <Property Name="InvestmentValue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TrustID" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ExcessShortfall" Type="String" MaxLength="19" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ms_CategoryDetail">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Maximum" Type="Double" />
+    <Property Name="Minimum" Type="Double" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="ms_InvestmentOption">
+    <Key>
+      <PropertyRef Name="InvestmentID" />
+    </Key>
+    <Property Name="InvestmentID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="InvestmentName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Maximum" Type="Double" />
+    <Property Name="Minimum" Type="Double" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="TrustDetail">
+    <Key>
+      <PropertyRef Name="TrustID" />
+    </Key>
+    <Property Name="TrustName" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="TrustID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Address" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="ContPerson" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNo" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="PanNo" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Advances" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Total_Corps" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="EmailID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="VerificationKey" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>
